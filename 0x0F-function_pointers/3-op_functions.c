@@ -1,28 +1,56 @@
 #include "3-calc.h"
-#include <stdlib.h>
+#include <stdio.h>
 /**
- * get_op_func - Selects the correct function to perform
- *               the operation asked by the user.
- * @s: The operator passed as argument.
- *
- * Return: A pointer to the function corresponding
- *         to the operator given as a parameter.
+ * op_add - add function
+ * @a: int type
+ * @b: int type
+ * Return: sum of two int
  */
-int (*get_op_func(char *s))(int, int)
+int op_add(int a, int b)
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL},
-	};
+	return (a + b);
+}
 
-	int i = 0;
+/**
+ * op_sub - substract function
+ * @a: int type
+ * @b: int type
+ * Return: subtract two ints
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
 
-	while (ops[i].op != NULL && *(ops[i].op) != *s)
-		i++;
+/**
+ * op_mul - multiply function
+ * @a: int type
+ * @b: int type
+ * Return: multiply two ints
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
 
-	return (ops[i].f);
+/**
+ * op_div - divide two ints
+ * @a: int type
+ * @b: int type
+ * Return: divide two ints
+ */
+int op_div(int a, int b)
+{
+	return (a / b);
+}
+
+/**
+ * op_mod - modulos of two ints
+ * @a: int type
+ * @b: int type
+ * Return: modulus of two ints
+ */
+int op_mod(int a, int b)
+{
+	return (a % b);
 }
